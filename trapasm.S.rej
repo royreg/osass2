@@ -1,0 +1,17 @@
+diff a/trapasm.S b/trapasm.S	(rejected hunks)
+@@ -26,10 +26,13 @@ alltraps:
+   # Return falls through to trapret...
+ .globl trapret
+ trapret:
++  pushl %esp
++  call checkPEndingSignals
++  addl $4, %esp
+   popal
+   popl %gs
+   popl %fs
+   popl %es
+   popl %ds
+   addl $0x8, %esp  # trapno and errcode
+-  iret
++  iret
+\ No newline at end of file

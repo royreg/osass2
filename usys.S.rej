@@ -1,0 +1,10 @@
+diff a/usys.S b/usys.S	(rejected hunks)
+@@ -29,3 +29,7 @@ SYSCALL(getpid)
+ SYSCALL(sbrk)
+ SYSCALL(sleep)
+ SYSCALL(uptime)
++SYSCALL(signal)
++SYSCALL(sigsend)
++SYSCALL(sigreturn)
++SYSCALL(alarm)
+\ No newline at end of file

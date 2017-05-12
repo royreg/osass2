@@ -1,0 +1,21 @@
+diff a/defs.h b/defs.h	(rejected hunks)
+@@ -116,6 +116,12 @@ void            userinit(void);
+ int             wait(void);
+ void            wakeup(void*);
+ void            yield(void);
++sighandler_t    signal(int, sighandler_t);
++int             sigsend(int, int);
++int             sigreturn(void);
++int             alarm(int);
++void            updateAlarms(void);
++
+ 
+ // swtch.S
+ void            swtch(struct context**, struct context*);
+@@ -183,4 +189,4 @@ int             copyout(pde_t*, uint, void*, uint);
+ void            clearpteu(pde_t *pgdir, char *uva);
+ 
+ // number of elements in fixed-size array
+-#define NELEM(x) (sizeof(x)/sizeof((x)[0]))
++#define NELEM(x) (sizeof(x)/sizeof((x)[0]))
+\ No newline at end of file

@@ -1,0 +1,16 @@
+diff a/trap.c b/trap.c	(rejected hunks)
+@@ -51,6 +51,7 @@ trap(struct trapframe *tf)
+     if(cpunum() == 0){
+       acquire(&tickslock);
+       ticks++;
++      updateAlarms();
+       wakeup(&ticks);
+       release(&tickslock);
+     }
+@@ -108,4 +109,4 @@ trap(struct trapframe *tf)
+   // Check if the process has been killed since we yielded
+   if(proc && proc->killed && (tf->cs&3) == DPL_USER)
+     exit();
+-}
++}
+\ No newline at end of file
